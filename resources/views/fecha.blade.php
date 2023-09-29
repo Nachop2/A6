@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>
-        <?php echo $dates[0], " ", $dates[1]," ", $dates[2]?>
+        <?php echo $year, " ", $month," ", $day?>
     </h1>
 </body>
 </html>

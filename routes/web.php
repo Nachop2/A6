@@ -30,8 +30,10 @@ Route::get('/fecha', function () {
     $year = date("Y");
     $month = date("F");
     $day = date("j");
-    $dates = array($year,$month,$day);
-    return view('fecha', compact("dates"));
+    return view('fecha')
+    ->with('year',$year)
+    ->with('month',$month)
+    ->with('day',$day);
 });
 
 Route::get('/user/{name?}', function (?string $name = "Please input an username") {
