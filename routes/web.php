@@ -32,3 +32,11 @@ Route::get('/combo/{text?}/{number?}', function (string $text = "Default text: "
 Route::post("postTest/{text?}", function (?string $text = "The post has worked"){
     return "You have inputed: " . $text;
 });
+
+Route::get('/host', function () {
+    return env('DB_HOST');
+});
+
+Route::get('/time', function () {
+    return config('app.timezone');
+});
