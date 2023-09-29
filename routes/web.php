@@ -21,8 +21,12 @@ Route::get('/user/{name?}', function (?string $name = "Please input an username"
     return $name;
 });
 
-Route::get('/age/{number?}', function (int $age = 18) {
+Route::get('/age/{age?}', function (int $age = 18) {
     return "You are " . $age . " years old";
+})->where('age', '[0-9]+');
+
+Route::get('/combo/{text?}/{number?}', function (string $text = "Default text: ",int $number = 18) {
+    return $text . $number;
 });
 
 Route::post("postTest/{text?}", function (?string $text = "The post has worked"){
