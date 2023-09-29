@@ -21,8 +21,17 @@ Route::get('/inicio', function () {
     return view('home');
 });
 
+// Route::get('/fecha', function () {
+//     return view('fecha', ['year' => date("Y"), 'month' => date("F"), 'day' => date("j")]);
+// });
+
+
 Route::get('/fecha', function () {
-    return view('fecha', ['year' => date("Y"), 'month' => date("F"), 'day' => date("j")]);
+    $year = date("Y");
+    $month = date("F");
+    $day = date("j");
+    $dates = array($year,$month,$day);
+    return view('fecha', compact("dates"));
 });
 
 Route::get('/user/{name?}', function (?string $name = "Please input an username") {
