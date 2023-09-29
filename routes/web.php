@@ -27,7 +27,7 @@ Route::get('/age/{age?}', function (int $age = 18) {
 
 Route::get('/combo/{text?}/{number?}', function (string $text = "Default text: ",int $number = 18) {
     return $text . $number;
-});
+})->where(['number' => '[0-9]+', 'text' => '[a-z]+']);
 
 Route::post("postTest/{text?}", function (?string $text = "The post has worked"){
     return "You have inputed: " . $text;
