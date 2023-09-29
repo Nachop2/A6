@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/inicio', function () {
+    return view('home');
+});
+
 Route::get('/user/{name?}', function (?string $name = "Please input an username") {
     return $name;
 });
