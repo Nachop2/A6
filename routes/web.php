@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/inicio', function () {
     return view('home');
 });
+Route::get('/error', function () {
+    return view("error");
+});
 
 // Route::get('/fecha', function () {
 //     return view('fecha', ['year' => date("Y"), 'month' => date("F"), 'day' => date("j")]);
