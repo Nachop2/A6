@@ -24,3 +24,7 @@ Route::get('/user/{name?}', function (?string $name = "Please input an username"
 Route::get('/age/{number?}', function (int $age = 18) {
     return "You are " . $age . " years old";
 });
+
+Route::post("postTest/{text?}", function (?string $text = "The post has worked"){
+    return "You have inputed: " . $text;
+});
