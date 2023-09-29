@@ -22,7 +22,7 @@ Route::get('/inicio', function () {
 });
 
 Route::get('/fecha', function () {
-    return view('fecha');
+    return view('fecha', ['year' => date("Y"), 'month' => date("F"), 'day' => date("j")]);
 });
 
 Route::get('/user/{name?}', function (?string $name = "Please input an username") {
